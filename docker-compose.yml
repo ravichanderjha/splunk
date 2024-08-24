@@ -1,0 +1,12 @@
+version: '3'
+services:
+  splunk:
+    image: splunk/splunk:latest
+    ports:
+      - "8000:8000" # Splunk Web Port
+      - "8088:8088" # Splunk HTTP Event Collector (HEC) Port
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_PASSWORD=Ravi@9910723164
+    volumes:
+      - ./splunk-data:/opt/splunk/var # Local volume for persistent storage
